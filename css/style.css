@@ -12,8 +12,10 @@ body{
     top: 0;
     z-index: 100;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+    padding: 0 20vw;
+    box-sizing: border-box;
     background: #000; 
 }
 .navbar-title{
@@ -186,6 +188,7 @@ body{
     padding: 12px;
     margin: 8px 0;
     border: 2px solid #26ADE4;
+    box-sizing: border-box;
 }
 .contact-submit{
     margin: 16px 0;
@@ -215,8 +218,10 @@ body{
     height: 8vh;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+    padding: 0 20vw;
+    box-sizing: border-box;
     background: #000;
 }
 .copyright{
@@ -228,6 +233,9 @@ body{
     margin: 0 5px;
 }
 .github:hover{
+    color: #fff;
+}
+.codepen:hover{
     color: #fff;
 }
 .linkedin:hover{
