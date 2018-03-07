@@ -4,22 +4,23 @@ body{
     padding: 0;
     font-family: 'Montserrat', sans-serif;
     overflow: hidden;
+    box-sizing: border-box;
 }
 .navbar{
     height: 8vh;
     width: 100vw;
     position: fixed; 
     top: 0;
-    z-index: 100;
+    z-index: 99;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20vw;
     box-sizing: border-box;
+    padding: 0 20vw;
     background: #000; 
 }
 .navbar-title{
-    font-size: 18pt;
+    font-size: 3.5vh;
     font-weight: 300;
     color: #26ADE4;
 }
@@ -29,7 +30,7 @@ body{
 }
 .navbar-link{
     text-decoration: none;
-    font-size: 12pt;
+    font-size: 2.2vh;
     color: #26ADE4;
     margin: 0 6px;
 }
@@ -37,33 +38,61 @@ body{
     color: #fff;
 }
 .language{
-    height: 8vh;
     position: absolute;
-    right: 16px;
-    display: flex;
-    align-items: center;
+    right: 2vw;
+    font-size: 1.6vh;
 }
-.language-link{
-    text-decoration: none;
-    font-size: 8pt;
-    color: #26ADE4;
+.menu-mobile{
+    z-index: 100;
+    visibility: hidden;
 }
-.language-link:hover{
-    color: #fff;
+.navbar-bars{
+    display: none;
 }
 @media (max-width: 640px) {
-    .navbar-title{
-        font-size: 8pt;
+    .navbar{
+        padding: 0 5vw;
     }
-    .navbar-link{
-        font-size: 6pt;
-        margin: 0 3px;
+    .navbar-title{
+        font-size: 4vh;
+    }
+    .navbar-links{
+        position: absolute;
+        left: 0px;
+        top: -18vh;    
+        display: flex;
+        flex-flow: column nowrap;
+    }
+    .navbar-link{ 
+        width: 100vw;
+        height: 6vh;
+        margin: 0;
+        background: #000;
+        font-size: 3vh;
+        color: #FFF;
+        border-top: 2px solid #FFF;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .navbar-link:hover{ 
+        color: #26ADE4;
+        border-color: #26ADE4;
     }
     .language{
-        right: 8px;
+        position: static;
+        font-size: 2.5vh;
     }
-    .language-link{
-        font-size: 4pt;
+    .menu-mobile{
+        visibility: visible;
+    }
+    .navbar-bars{
+        display: block;
+        font-size: 4vh;
+        color: #26ADE4;
+    }
+    .navbar-bars:hover{
+        color: #FFF;
     }
 }
 .about{
@@ -84,14 +113,14 @@ body{
     border-radius: 50%;
 }
 .about-title{
-    font-size: 28pt;
+    font-size: 3vw;
     font-weight: 300;
     color: #524e4d;
     margin: 32px 0;
 }
 .about-text{
     text-align: center;
-    font-size: 13pt;
+    font-size: 1.3vw;
     color: #524e4d;	/*#93a4aa;*/
 }
 @media (max-width: 640px) {
@@ -99,11 +128,11 @@ body{
         width: 50vw;
     }
     .about-title{
-        font-size: 16pt;
-        margin: 8px 0;
+        font-size: 7vw;
+        margin: 2vh 0;
     }
     .about-text{
-        font-size: 8pt;
+        font-size: 3.7vw;
         margin: 0 5vw;
     }
 }
@@ -117,7 +146,7 @@ body{
     padding: 0 20vw;
 }
 .projects-title{
-    font-size: 22pt;
+    font-size: 3vw;
     font-weight: 300;
     color: #524e4d;
     margin: 0 0 32px;
@@ -139,7 +168,7 @@ body{
     width: 15vw;
 }
 .project-title{
-    font-size: 12pt;
+    font-size: 1vw;
     font-weight: 300;
     color: #524e4d;
 }
@@ -152,16 +181,17 @@ body{
         padding: 0;
     }
     .projects-title{
-        font-size: 16pt;
+        font-size: 7vw;
+        margin-bottom: 2vh;
     }
     .project{
-        margin: 8px 0;
+        margin: 1.5vh 0;
     }
     .project-image{
         width: 40vw;
     }
     .project-title{
-        font-size: 6pt;
+        font-size: 4vw;
     }
 }
 .contact{
@@ -172,7 +202,7 @@ body{
     align-items: center;
 }
 .contact-title{
-    font-size: 22pt;
+    font-size: 3vw;
     font-weight: 300;
     color: #524e4d;
     margin: 0 0 32px;
@@ -186,9 +216,9 @@ body{
 .contact-input{
     width: 60vw;
     padding: 12px;
+    box-sizing: border-box;
     margin: 8px 0;
     border: 2px solid #26ADE4;
-    box-sizing: border-box;
 }
 .contact-submit{
     margin: 16px 0;
@@ -202,8 +232,12 @@ body{
     color: #fff;
 }
 @media (max-width: 640px){
+    .contact{
+        height: 80vh;
+    }
     .contact-title{
-        font-size: 16pt;
+        font-size: 7vw;
+        margin-bottom: 2vh; 
     }
     .contact-input{
         width: 90vw;
@@ -217,7 +251,7 @@ body{
 .footer{
     height: 8vh;
     display: flex;
-    flex-direction: row;
+    flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
     padding: 0 20vw;
@@ -245,16 +279,25 @@ body{
     color: #3b5998;
 }
 .twitter:hover{
-    color: #55acee;
+    color: #1da1f2;
 }
 .instagram:hover{
     color: #3f729b;
 }
 @media (max-width: 640px){
+    .footer{
+        height: 12vh;
+        flex-direction: column;
+        justify-content: center;
+    }
     .copyright{
-        font-size: 8pt;
+        margin: 1vh 0 0;
+        font-size: 2vh;
+    }
+    .footer-social{
+        order: -1;
     }
     .social{
-        font-size: 16px;
+        font-size: 4vh;
     }
 }
